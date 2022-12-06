@@ -1,0 +1,50 @@
+.page-content {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(173deg, rgba(48,48,50,1) 0%, rgba(24,25,25,1) 100%);
+}
+
+.filter-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px 40px 0 40px;
+}
+
+.badge {
+  margin: 5px 10px;
+  font-size: 24px;
+  background-color: #4b4c52 !important;
+  color: white !important;
+  transition: background-color 0.5s;
+}
+
+.badge:hover {
+  background-color: olivedrab !important;
+  cursor: pointer;
+}
+
+.badge-selected {
+  background-color: #ddff28 !important;
+  color: #4b4c52 !important;
+}
+
+.add-cuisine-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  width: 250px;
+  height: 42px;
+  border-radius: 7px;
+}
+
+.map-container {
+  flex-grow: 1;
+}

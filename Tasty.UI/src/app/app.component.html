@@ -1,0 +1,27 @@
+<div class="page-content">
+
+  <div class="filter-container">
+    <span class="badge rounded-pill" (click)="onChangeFilter(0)"
+          [ngClass]="{'badge-selected': selectedId === 0 }">
+      <fa-icon [icon]="badgeIcon"></fa-icon> Wszystko
+    </span>
+    <span *ngFor="let cuisine of cuisines$ | async" class="badge rounded-pill"
+          (click)="onChangeFilter(cuisine.id)"
+          [ngClass]="{'badge-selected': selectedId === cuisine.id}">
+      <fa-icon [icon]="badgeIcon"></fa-icon> {{ cuisine.name }}
+    </span>
+
+    <span *ngIf="!isInputVisible" class="badge rounded-pill" (click)="isInputVisible = true">
+      <fa-icon [icon]="plusIcon"></fa-icon>
+    </span>
+    <div *ngIf="isInputVisible" class="add-cuisine-input">
+      <input [(ngModel)]="newCuisine" type="text">
+      <button class="btn btn-outline-secondary" type="button" (click)="onAddCuisine()">Add</button>
+    </div>
+
+  </div>
+
+  <div class="map-container">
+    <app-map [filter]="selectedId"></app-map>
+  </div>
+</div>
